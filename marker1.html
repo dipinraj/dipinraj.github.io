@@ -76,6 +76,11 @@ function initialize1() {
       });
 
       infowindow.open(map, curepipe);
+
+      curepipe.addListener('click', function() {
+       infowindow.open(map, curepipe);
+      });
+
 }
 
 
