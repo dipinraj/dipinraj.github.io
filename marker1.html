@@ -16,26 +16,72 @@
     <script>
 // Initialize and add the map
 function initMap() {
-  // The location of Uluru
-  var uluru = {lat: -25.344, lng: 131.036};
+  // The location of Kozhikode  11.260204, 75.804288
+  // Ashirvad 11.295733, 75.782869
+  var uluru = {lat: 11.260204, lng: 75.804288};
   // The map, centered at Uluru
   var map = new google.maps.Map(
-      document.getElementById('map'), {zoom: 4, center: uluru});
+      document.getElementById('map'), {zoom: 10, center: uluru});
   // The marker, positioned at Uluru
   var marker = new google.maps.Marker({position: uluru, map: map,title:"You are here!"});
 
   var infowindow = new google.maps.InfoWindow({
-    content: "...............................content is here!"
+    content: "Your Youtube Stream!"
   });
   marker.addListener('click', function() {
     infowindow.open(map, marker);
   });
-
-
 }
+
+function initialize1() {
+  var mapProp = {
+    center: new google.maps.LatLng(11.260204, 75.804288),
+    zoom: 10,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  };
+
+  var map = new google.maps.Map(document.getElementById("map"), mapProp);
+  var curepipe = new google.maps.Marker({
+    position: new google.maps.LatLng(11.295733, 75.782869)
+  });
+
+  curepipe.setMap(map);
+
+  var infowindow = new google.maps.InfoWindow({
+    content: '<video controls="" style="width:100px;height:100px;" poster="poster.png">' +
+    '<source src="http://www.html5rocks.com/en/tutorials/video/basics/devstories.webm" type="video/webm;">' +
+    '<source src="http://www.html5rocks.com/en/tutorials/video/basics/devstories.mp4" type="video/mp4;">' +
+    '</video>'
+  });
+
+  infowindow.open(map, curepipe);
+}
+
+  function initialize2() {
+
+      var mapProp = {
+          center: new google.maps.LatLng(11.260204,75.804288),
+          zoom: 10,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+      };
+
+      var map = new google.maps.Map(document.getElementById("map"), mapProp)
+      var curepipe = new google.maps.Marker({
+          position: new google.maps.LatLng(11.295733, 75.782869)
+      });
+
+      curepipe.setMap(map);
+      var infowindow = new google.maps.InfoWindow({
+          content: '<iframe title="YouTube video player" type="text/html" width="100%" height="100%" src="https://www.youtube.com/embed/live_stream?channel=UCBk0xFcApprEnsz73pTGaLQ&autoplay=1" frameborder="0"></iframe>'
+      });
+
+      infowindow.open(map, curepipe);
+}
+
+
     </script>
     <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLNoBO5W0qLQhp-tZlQxFdn0i8tLvETDk&callback=initMap">
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLNoBO5W0qLQhp-tZlQxFdn0i8tLvETDk&callback=initialize2">
     </script>
   </body>
 </html>
