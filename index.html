@@ -8,9 +8,37 @@
         width: 100%;  /* The width is the width of the web page */
        }
     </style>
+     <link href="css/style.css" rel="stylesheet">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
   </head>
   <body>
-    <h3>My Google Maps Demo.</h3>
+      <!--The Navigation bar -->
+      <nav>
+         <div class="menu-icon">
+            <span class="fas fa-bars"></span>
+         </div>
+         <div class="logo">
+            kozhikode.live
+         </div>
+         <div class="nav-items">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+         </div>
+         <div class="search-icon">
+            <span class="fas fa-search"></span>
+         </div>
+         <div class="cancel-icon">
+            <span class="fas fa-times"></span>
+         </div>
+         <form action="#">
+            <input type="search" class="search-data" placeholder="Search" required>
+            <button type="submit" class="fas fa-search"></button>
+         </form>
+      </nav>
+
+    <!--h3>My Google Maps Demo.</h3!-->
     <!--The div element for the map -->
     <div id="map"></div>
     <script>
@@ -86,7 +114,38 @@ function initialize1() {
 
     </script>
     <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLNoBO5W0qLQhp-tZlQxFdn0i8tLvETDk&callback=initialize2">
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDGnztCsVyRvTp6RL6YhcyRbDPLS_eXy5I&callback=initialize2">
     </script>
+    <!-- Start of txt.me widget code -->
+<script src="https://v2.txt.me/livechat/js/wrapper/c7a077d515754ab7a16fbe33d9fbf952" async></script>
+<noscript><a href="https://txt.me/reviews/c7a077d515754ab7a16fbe33d9fbf952" rel="nofollow">Rate First widget customer support</a>, powered by <a href="https://txt.me" rel="noopener nofollow" target="_blank">txt.me</a></noscript>
+<!-- End of txt.me widget code -->
+
+<script>
+         const menuBtn = document.querySelector(".menu-icon span");
+         const searchBtn = document.querySelector(".search-icon");
+         const cancelBtn = document.querySelector(".cancel-icon");
+         const items = document.querySelector(".nav-items");
+         const form = document.querySelector("form");
+         menuBtn.onclick = ()=>{
+           items.classList.add("active");
+           menuBtn.classList.add("hide");
+           searchBtn.classList.add("hide");
+           cancelBtn.classList.add("show");
+         }
+         cancelBtn.onclick = ()=>{
+           items.classList.remove("active");
+           menuBtn.classList.remove("hide");
+           searchBtn.classList.remove("hide");
+           cancelBtn.classList.remove("show");
+           form.classList.remove("active");
+           cancelBtn.style.color = "#ff3d00";
+         }
+         searchBtn.onclick = ()=>{
+           form.classList.add("active");
+           searchBtn.classList.add("hide");
+           cancelBtn.classList.add("show");
+         }
+      </script>
   </body>
 </html>
